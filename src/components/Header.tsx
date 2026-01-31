@@ -18,13 +18,13 @@ const Header = () => {
 
           <nav className="hidden md:flex items-center gap-8">
             <a href="#accommodations" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Szállások
+              Accommodations
             </a>
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Newquay-ról
+              About Newquay
             </a>
             <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-              Kapcsolat
+              Contact
             </a>
           </nav>
 
@@ -46,21 +46,21 @@ const Header = () => {
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Szállások
+                Accommodations
               </a>
               <a 
                 href="#about" 
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Newquay-ról
+                About Newquay
               </a>
               <a 
                 href="#contact" 
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Kapcsolat
+                Contact
               </a>
             </div>
           </nav>

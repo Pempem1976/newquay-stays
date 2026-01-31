@@ -50,15 +50,15 @@ const AccommodationCard = ({ accommodation, onBook }: AccommodationCardProps) =>
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
           <div className="flex items-center gap-1">
             <Bed className="h-4 w-4" />
-            <span>{accommodation.bedrooms} szoba</span>
+            <span>{accommodation.bedrooms} bed</span>
           </div>
           <div className="flex items-center gap-1">
             <Bath className="h-4 w-4" />
-            <span>{accommodation.bathrooms} fürdő</span>
+            <span>{accommodation.bathrooms} bath</span>
           </div>
           <div className="flex items-center gap-1">
             <Users className="h-4 w-4" />
-            <span>{accommodation.maxGuests} fő</span>
+            <span>{accommodation.maxGuests} guests</span>
           </div>
         </div>
         
@@ -86,7 +86,7 @@ const AccommodationCard = ({ accommodation, onBook }: AccommodationCardProps) =>
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
           onClick={() => onBook(accommodation)}
         >
-          Foglalás
+          Book Now
         </Button>
       </CardContent>
     </Card>
