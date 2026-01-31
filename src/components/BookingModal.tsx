@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { format } from 'date-fns';
-import { hu } from 'date-fns/locale';
 import { Calendar as CalendarIcon, X, Users, Star, MapPin } from 'lucide-react';
 import {
   Dialog,
@@ -57,12 +56,12 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
     e.preventDefault();
     
     if (!checkIn || !checkOut || !name || !email || !phone) {
-      toast.error('Kérjük, töltsd ki az összes mezőt!');
+      toast.error('Please fill in all fields!');
       return;
     }
 
-    toast.success('Foglalás sikeresen elküldve!', {
-      description: `${accommodation.name} - ${nights} éjszaka - ${accommodation.currency}${totalPrice}`,
+    toast.success('Booking successfully submitted!', {
+      description: `${accommodation.name} - ${nights} nights - ${accommodation.currency}${totalPrice}`,
     });
     
     onClose();
@@ -77,7 +76,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-display text-2xl">Foglalás</DialogTitle>
+          <DialogTitle className="font-display text-2xl">Book Your Stay</DialogTitle>
         </DialogHeader>
 
         <div className="flex gap-4 p-4 bg-secondary rounded-lg mb-4">
@@ -97,7 +96,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
               <span className="font-medium">{accommodation.rating}</span>
             </div>
             <p className="text-primary font-semibold mt-2">
-              {accommodation.currency}{accommodation.price}/éj
+              {accommodation.currency}{accommodation.price}/night
             </p>
           </div>
         </div>
@@ -105,7 +104,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Bejelentkezés</Label>
+              <Label>Check-in</Label>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
@@ -116,7 +115,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
                     )}
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {checkIn ? format(checkIn, "MMM d", { locale: hu }) : "Válassz"}
+                    {checkIn ? format(checkIn, "MMM d") : "Select"}
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -132,7 +131,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
             </div>
 
             <div className="space-y-2">
-              <Label>Kijelentkezés</Label>
+              <Label>Check-out</Label>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
@@ -143,7 +142,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
                     )}
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {checkOut ? format(checkOut, "MMM d", { locale: hu }) : "Válassz"}
+                    {checkOut ? format(checkOut, "MMM d") : "Select"}
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -160,7 +159,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
           </div>
 
           <div className="space-y-2">
-            <Label>Vendégek száma</Label>
+            <Label>Number of Guests</Label>
             <Select value={guests} onValueChange={setGuests}>
               <SelectTrigger>
                 <SelectValue />
@@ -170,7 +169,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
                   <SelectItem key={i + 1} value={String(i + 1)}>
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4" />
-                      {i + 1} vendég
+                      {i + 1} {i === 0 ? 'guest' : 'guests'}
                     </div>
                   </SelectItem>
                 ))}
@@ -179,36 +178,36 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="name">Teljes név</Label>
+            <Label htmlFor="name">Full Name</Label>
             <Input 
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Kovács János"
+              placeholder="John Smith"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email cím</Label>
+            <Label htmlFor="email">Email Address</Label>
             <Input 
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="pelda@email.com"
+              placeholder="john@example.com"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="phone">Telefonszám</Label>
+            <Label htmlFor="phone">Phone Number</Label>
             <Input 
               id="phone"
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+36 30 123 4567"
+              placeholder="+44 7700 123456"
               required
             />
           </div>
@@ -216,11 +215,11 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
           {nights > 0 && (
             <div className="p-4 bg-muted rounded-lg space-y-2">
               <div className="flex justify-between text-sm">
-                <span>{accommodation.currency}{accommodation.price} × {nights} éjszaka</span>
+                <span>{accommodation.currency}{accommodation.price} × {nights} {nights === 1 ? 'night' : 'nights'}</span>
                 <span>{accommodation.currency}{totalPrice}</span>
               </div>
               <div className="flex justify-between font-semibold text-lg border-t border-border pt-2">
-                <span>Összesen</span>
+                <span>Total</span>
                 <span className="text-primary">{accommodation.currency}{totalPrice}</span>
               </div>
             </div>
@@ -230,7 +229,7 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
             type="submit" 
             className="w-full bg-gradient-sunset text-accent-foreground font-semibold py-6 text-lg"
           >
-            Foglalás megerősítése
+            Confirm Booking
           </Button>
         </form>
       </DialogContent>

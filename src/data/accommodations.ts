@@ -22,8 +22,8 @@ export interface Accommodation {
 export const accommodations: Accommodation[] = [
   {
     id: 1,
-    name: "Tengerparti Cottage",
-    description: "Bájos tengerparti házikó lélegzetelállító kilátással az óceánra. Tökéletes pároknak vagy kisebb családoknak.",
+    name: "Seaside Cottage",
+    description: "Charming beachfront cottage with breathtaking ocean views. Perfect for couples or small families.",
     price: 125,
     currency: "£",
     image: acc1,
@@ -31,13 +31,13 @@ export const accommodations: Accommodation[] = [
     bedrooms: 2,
     bathrooms: 1,
     maxGuests: 4,
-    amenities: ["Wifi", "Konyha", "Parkoló", "Tengeri kilátás"],
+    amenities: ["WiFi", "Kitchen", "Parking", "Sea View"],
     rating: 4.9
   },
   {
     id: 2,
-    name: "Panorámás Apartman",
-    description: "Modern, elegáns apartman tágas erkéllyel és panorámás tengeri kilátással. Ideális városi pihenéshez.",
+    name: "Panorama Apartment",
+    description: "Modern, elegant apartment with spacious balcony and panoramic sea views. Ideal for a city break.",
     price: 165,
     currency: "£",
     image: acc2,
@@ -45,13 +45,13 @@ export const accommodations: Accommodation[] = [
     bedrooms: 2,
     bathrooms: 2,
     maxGuests: 4,
-    amenities: ["Wifi", "Lift", "Erkély", "Mosógép"],
+    amenities: ["WiFi", "Lift", "Balcony", "Washer"],
     rating: 4.8
   },
   {
     id: 3,
-    name: "Szörfös Lodge",
-    description: "Hangulatos faház szörfös hangulattal, mindössze pár percre a legjobb hullámoktól. Deszkák kölcsönzése helyben!",
+    name: "Surfer's Lodge",
+    description: "Cozy cabin with surf vibes, just minutes from the best waves. Board rental available on site!",
     price: 95,
     currency: "£",
     image: acc3,
@@ -59,13 +59,13 @@ export const accommodations: Accommodation[] = [
     bedrooms: 1,
     bathrooms: 1,
     maxGuests: 2,
-    amenities: ["Wifi", "Szörfdeszka tárolás", "Kert", "BBQ"],
+    amenities: ["WiFi", "Board Storage", "Garden", "BBQ"],
     rating: 4.7
   },
   {
     id: 4,
     name: "Victorian B&B",
-    description: "Elegáns viktoriánus szálláshely angol reggelivel. Történelmi hangulat modern kényelemmel.",
+    description: "Elegant Victorian accommodation with English breakfast. Historic charm meets modern comfort.",
     price: 110,
     currency: "£",
     image: acc4,
@@ -73,13 +73,13 @@ export const accommodations: Accommodation[] = [
     bedrooms: 3,
     bathrooms: 2,
     maxGuests: 6,
-    amenities: ["Reggeli", "Wifi", "Kert", "Parkoló"],
+    amenities: ["Breakfast", "WiFi", "Garden", "Parking"],
     rating: 4.9
   },
   {
     id: 5,
     name: "Luxury Ocean Suite",
-    description: "Prémium lakosztály lenyűgöző óceán panorámával. A luxus és nyugalom tökéletes kombinációja.",
+    description: "Premium suite with stunning ocean panorama. The perfect combination of luxury and tranquility.",
     price: 245,
     currency: "£",
     image: acc5,
@@ -87,7 +87,7 @@ export const accommodations: Accommodation[] = [
     bedrooms: 1,
     bathrooms: 1,
     maxGuests: 2,
-    amenities: ["Jacuzzi", "Minibar", "Szobaszerviz", "Spa"],
+    amenities: ["Jacuzzi", "Minibar", "Room Service", "Spa"],
     rating: 5.0
   }
 ];

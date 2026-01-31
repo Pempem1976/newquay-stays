@@ -3,23 +3,23 @@ import { Waves, Sun, UtensilsCrossed, Camera } from 'lucide-react';
 const features = [
   {
     icon: Waves,
-    title: 'Világszínvonalú szörfözés',
-    description: 'Fistral Beach az Egyesült Királyság szörfös fővárosa, tökéletes hullámokkal kezdőknek és profiknak egyaránt.'
+    title: 'World-Class Surfing',
+    description: 'Fistral Beach is the UK\'s surfing capital, with perfect waves for beginners and pros alike.'
   },
   {
     icon: Sun,
-    title: 'Gyönyörű strandok',
-    description: '7 lélegzetelállító strand vár arany homokkal és kristálytiszta vízzel Cornwall szívében.'
+    title: 'Beautiful Beaches',
+    description: '7 stunning beaches await with golden sand and crystal-clear waters in the heart of Cornwall.'
   },
   {
     icon: UtensilsCrossed,
-    title: 'Gasztronómia',
-    description: 'Friss tengeri ételek, helyi kézműves sörök és díjnyertes éttermek minden sarkon.'
+    title: 'Local Cuisine',
+    description: 'Fresh seafood, local craft beers and award-winning restaurants on every corner.'
   },
   {
     icon: Camera,
-    title: 'Felejthetetlen élmények',
-    description: 'Bálnalesés, part menti séták, és a legszebb naplementék várnak Cornwallban.'
+    title: 'Unforgettable Experiences',
+    description: 'Whale watching, coastal walks, and the most beautiful sunsets await you in Cornwall.'
   }
 ];
 
@@ -29,14 +29,14 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Miért Newquay?
+            Why Newquay?
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Cornwall <span className="text-primary">ékköve</span>
+            Cornwall's <span className="text-primary">Jewel</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Newquay az Egyesült Királyság legkedveltebb tengerparti úti célja, 
-            ahol a természet szépsége találkozik a szörfös életérzéssel.
+            Newquay is the UK's most popular coastal destination, 
+            where natural beauty meets surf culture.
           </p>
         </div>
 
