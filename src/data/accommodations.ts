@@ -10,84 +10,45 @@ export interface Accommodation {
   description: string;
   price: number;
   currency: string;
-  image: string;
+  images: string[];
   location: string;
+  address: string;
   bedrooms: number;
   bathrooms: number;
   maxGuests: number;
   amenities: string[];
   rating: number;
+  reviewCount: number;
+  size: string;
 }
 
 export const accommodations: Accommodation[] = [
   {
     id: 1,
-    name: "Blue Tides Hideaway by Fistral",
-    description: "A charming coastal hideaway just moments from Fistral Beach. Perfect for surf lovers and beach enthusiasts.",
-    price: 125,
+    name: "Newquay Fistral Beach View with pool",
+    description: "Elegant two-bedroom apartment in Newquay with stunning sea views, sun terrace, and seasonal outdoor swimming pool. Features a garden, open-air bath, and free WiFi. Located just a 2-minute walk from Fistral Beach.",
+    price: 150,
     currency: "£",
-    image: acc1,
-    location: "Fistral Beach",
+    images: [acc1, acc2, acc3, acc4, acc5],
+    location: "Fistral Beach, Newquay",
+    address: "15 Pentire Avenue, 15 Fistral Court, Newquay, TR7 1PD, United Kingdom",
     bedrooms: 2,
     bathrooms: 1,
-    maxGuests: 4,
-    amenities: ["WiFi", "Kitchen", "Parking", "Sea View"],
-    rating: 4.9
-  },
-  {
-    id: 2,
-    name: "Sea View Studio by Fistral Beach",
-    description: "Cozy studio apartment with stunning sea views. Ideal for couples seeking a romantic coastal getaway.",
-    price: 95,
-    currency: "£",
-    image: acc2,
-    location: "Fistral Beach",
-    bedrooms: 1,
-    bathrooms: 1,
-    maxGuests: 2,
-    amenities: ["WiFi", "Kitchen", "Sea View", "Balcony"],
-    rating: 4.8
-  },
-  {
-    id: 3,
-    name: "Beachfront Apartment with 180° Sea Views",
-    description: "Spectacular beachfront apartment offering panoramic 180° ocean views. Wake up to the sound of waves.",
-    price: 185,
-    currency: "£",
-    image: acc3,
-    location: "Fistral Beach",
-    bedrooms: 2,
-    bathrooms: 2,
-    maxGuests: 4,
-    amenities: ["WiFi", "Kitchen", "Panoramic Views", "Balcony"],
-    rating: 5.0
-  },
-  {
-    id: 4,
-    name: "Bright Coastal Apartment near Fistral",
-    description: "Light-filled modern apartment in a prime location near Fistral Beach. Contemporary comfort meets coastal charm.",
-    price: 145,
-    currency: "£",
-    image: acc4,
-    location: "Near Fistral Beach",
-    bedrooms: 2,
-    bathrooms: 1,
-    maxGuests: 4,
-    amenities: ["WiFi", "Kitchen", "Parking", "Washer"],
-    rating: 4.9
-  },
-  {
-    id: 5,
-    name: "Retro Ocean View Pad at Fistral Beach",
-    description: "Unique retro-styled apartment with amazing ocean views. A quirky and stylish base for your Newquay adventure.",
-    price: 135,
-    currency: "£",
-    image: acc5,
-    location: "Fistral Beach",
-    bedrooms: 1,
-    bathrooms: 1,
-    maxGuests: 2,
-    amenities: ["WiFi", "Kitchen", "Ocean View", "Retro Decor"],
-    rating: 4.8
+    maxGuests: 5,
+    amenities: [
+      "Outdoor Swimming Pool",
+      "Free Parking",
+      "Free WiFi",
+      "Sea View",
+      "Balcony",
+      "Fully Equipped Kitchen",
+      "Washing Machine",
+      "Garden",
+      "Pet Friendly",
+      "Family Rooms"
+    ],
+    rating: 8.8,
+    reviewCount: 49,
+    size: "40 m²"
   }
 ];

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { format } from 'date-fns';
-import { Calendar as CalendarIcon, X, Users, Star, MapPin } from 'lucide-react';
+import { Calendar as CalendarIcon, Users, Star, MapPin, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
 import { Accommodation } from '@/data/accommodations';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
@@ -40,8 +41,21 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!accommodation) return null;
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === accommodation.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? accommodation.images.length - 1 : prev - 1
+    );
+  };
 
   const calculateNights = () => {
     if (!checkIn || !checkOut) return 0;
@@ -70,35 +84,112 @@ const BookingModal = ({ accommodation, isOpen, onClose }: BookingModalProps) => 
     setName('');
     setEmail('');
     setPhone('');
+    setCurrentImageIndex(0);
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="font-display text-2xl">Book Your Stay</DialogTitle>
         </DialogHeader>
 
-        <div className="flex gap-4 p-4 bg-secondary rounded-lg mb-4">
+        {/* Image Gallery */}
+        <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
           <img 
-            src={accommodation.image} 
-            alt={accommodation.name}
-            className="w-24 h-24 object-cover rounded-lg"
+            src={accommodation.images[currentImageIndex]} 
+            alt={`${accommodation.name} - Image ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover"
           />
-          <div className="flex-1">
-            <h3 className="font-display font-semibold text-foreground">{accommodation.name}</h3>
-            <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
-              <MapPin className="h-3.5 w-3.5" />
-              <span>{accommodation.location}</span>
-            </div>
-            <div className="flex items-center gap-1 text-sm mt-1">
-              <Star className="h-3.5 w-3.5 fill-sunset text-sunset" />
-              <span className="font-medium">{accommodation.rating}</span>
-            </div>
-            <p className="text-primary font-semibold mt-2">
-              {accommodation.currency}{accommodation.price}/night
-            </p>
+          
+          {accommodation.images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-card/80 backdrop-blur-sm p-2 rounded-full hover:bg-card transition-colors"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-card/80 backdrop-blur-sm p-2 rounded-full hover:bg-card transition-colors"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+              
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {accommodation.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex 
+                        ? 'bg-white w-4' 
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Thumbnail Gallery */}
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+          {accommodation.images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                index === currentImageIndex 
+                  ? 'border-primary' 
+                  : 'border-transparent opacity-70 hover:opacity-100'
+              }`}
+            >
+              <img 
+                src={image} 
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* Property Info */}
+        <div className="p-4 bg-secondary rounded-lg mb-4">
+          <h3 className="font-display font-semibold text-lg text-foreground mb-2">
+            {accommodation.name}
+          </h3>
+          <div className="flex items-center gap-1 text-sm text-muted-foreground mb-2">
+            <MapPin className="h-3.5 w-3.5" />
+            <span>{accommodation.address}</span>
           </div>
+          <div className="flex items-center gap-4 text-sm mb-3">
+            <div className="flex items-center gap-1">
+              <Star className="h-3.5 w-3.5 fill-sunset text-sunset" />
+              <span className="font-medium">{accommodation.rating}/10</span>
+              <span className="text-muted-foreground">({accommodation.reviewCount} reviews)</span>
+            </div>
+            <div className="flex items-center gap-1 text-muted-foreground">
+              <Maximize2 className="h-3.5 w-3.5" />
+              <span>{accommodation.size}</span>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground mb-3">{accommodation.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {accommodation.amenities.map((amenity) => (
+              <Badge 
+                key={amenity} 
+                variant="secondary" 
+                className="bg-background text-foreground text-xs"
+              >
+                {amenity}
+              </Badge>
+            ))}
+          </div>
+          <p className="text-primary font-semibold text-lg mt-3">
+            {accommodation.currency}{accommodation.price}/night
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
