@@ -1,8 +1,12 @@
-import acc1 from '@/assets/accommodation-1.jpg';
-import acc2 from '@/assets/accommodation-2.jpg';
-import acc3 from '@/assets/accommodation-3.jpg';
-import acc4 from '@/assets/accommodation-4.jpg';
-import acc5 from '@/assets/accommodation-5.jpg';
+import newquaySeaview from '@/assets/newquay-seaview.jpg';
+import newquayPool from '@/assets/newquay-pool.jpg';
+import newquayLivingTv from '@/assets/newquay-living-tv.jpg';
+import newquayLivingSofa from '@/assets/newquay-living-sofa.jpg';
+import newquayDining from '@/assets/newquay-dining.jpg';
+import newquayKitchen from '@/assets/newquay-kitchen.jpg';
+import newquayBedroomMaster from '@/assets/newquay-bedroom-master.jpg';
+import newquayBedroomTwin from '@/assets/newquay-bedroom-twin.jpg';
+import newquayBathroom from '@/assets/newquay-bathroom.jpg';
 
 export interface Accommodation {
   id: number;
@@ -29,7 +33,17 @@ export const accommodations: Accommodation[] = [
     description: "Elegant two-bedroom apartment in Newquay with stunning sea views, sun terrace, and seasonal outdoor swimming pool. Features a garden, open-air bath, and free WiFi. Located just a 2-minute walk from Fistral Beach.",
     price: 150,
     currency: "£",
-    images: [acc1, acc2, acc3, acc4, acc5],
+    images: [
+      newquaySeaview,
+      newquayPool,
+      newquayLivingTv,
+      newquayLivingSofa,
+      newquayDining,
+      newquayKitchen,
+      newquayBedroomMaster,
+      newquayBedroomTwin,
+      newquayBathroom
+    ],
     location: "Fistral Beach, Newquay",
     address: "15 Pentire Avenue, 15 Fistral Court, Newquay, TR7 1PD, United Kingdom",
     bedrooms: 2,
