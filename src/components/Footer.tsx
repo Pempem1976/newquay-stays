@@ -86,15 +86,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <MapPin className="h-4 w-4 text-sunset flex-shrink-0" />
-                <span>42 Beach Road, Newquay, TR7 1ES</span>
+                <span>15 Fistral Court, Pentire Avenue, Newquay TR71PD</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <Phone className="h-4 w-4 text-sunset flex-shrink-0" />
-                <span>+44 1637 850 123</span>
+                <span>+44 7592 987818</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/80">
                 <Mail className="h-4 w-4 text-sunset flex-shrink-0" />
-                <span>hello@newquaystays.com</span>
+                <span>newquay15fistral@gmail.com</span>
               </li>
             </ul>
           </div>
