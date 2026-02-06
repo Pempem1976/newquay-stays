@@ -17,6 +17,16 @@ import retroBedroom from '@/assets/retro-bedroom.jpg';
 import retroDining from '@/assets/retro-dining.jpg';
 import retroKitchen from '@/assets/retro-kitchen.jpg';
 import retroKitchenWide from '@/assets/retro-kitchen-wide.jpg';
+import rocklandsBalconyBeach from '@/assets/rocklands-balcony-beach.jpg';
+import rocklandsBathroomBath from '@/assets/rocklands-bathroom-bath.jpg';
+import rocklandsBathroomShower from '@/assets/rocklands-bathroom-shower.jpg';
+import rocklandsBalconySea from '@/assets/rocklands-balcony-sea.jpg';
+import rocklandsKitchen from '@/assets/rocklands-kitchen.jpg';
+import rocklandsKitchenCounter from '@/assets/rocklands-kitchen-counter.jpg';
+import rocklandsLivingSeaview from '@/assets/rocklands-living-seaview.jpg';
+import rocklandsBedroom from '@/assets/rocklands-bedroom.jpg';
+import rocklandsOverview from '@/assets/rocklands-overview.jpg';
+import rocklandsSofa from '@/assets/rocklands-sofa.jpg';
 
 export interface Accommodation {
   id: number;
@@ -82,9 +92,16 @@ export const accommodations: Accommodation[] = [
     price: 120,
     currency: "£",
     images: [
-      newquaySeaview,
-      newquayLivingTv,
-      newquayBathroom
+      rocklandsBalconyBeach,
+      rocklandsBalconySea,
+      rocklandsLivingSeaview,
+      rocklandsBedroom,
+      rocklandsSofa,
+      rocklandsKitchen,
+      rocklandsKitchenCounter,
+      rocklandsOverview,
+      rocklandsBathroomBath,
+      rocklandsBathroomShower
     ],
     location: "Narrowcliff, Newquay",
     address: "Apartment 19 Rocklands, Narrowcliff, Newquay, TR7 2FD, United Kingdom",
