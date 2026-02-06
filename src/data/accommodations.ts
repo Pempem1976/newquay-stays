@@ -7,6 +7,16 @@ import newquayKitchen from '@/assets/newquay-kitchen.jpg';
 import newquayBedroomMaster from '@/assets/newquay-bedroom-master.jpg';
 import newquayBedroomTwin from '@/assets/newquay-bedroom-twin.jpg';
 import newquayBathroom from '@/assets/newquay-bathroom.jpg';
+import retroLounge from '@/assets/retro-lounge.jpg';
+import retroPool from '@/assets/retro-pool.jpg';
+import retroStudioOverview from '@/assets/retro-studio-overview.jpg';
+import retroLiving from '@/assets/retro-living.jpg';
+import retroBedroomWide from '@/assets/retro-bedroom-wide.jpg';
+import retroBathroom from '@/assets/retro-bathroom.jpg';
+import retroBedroom from '@/assets/retro-bedroom.jpg';
+import retroDining from '@/assets/retro-dining.jpg';
+import retroKitchen from '@/assets/retro-kitchen.jpg';
+import retroKitchenWide from '@/assets/retro-kitchen-wide.jpg';
 
 export interface Accommodation {
   id: number;
@@ -104,11 +114,16 @@ export const accommodations: Accommodation[] = [
     price: 135,
     currency: "£",
     images: [
-      newquayPool,
-      newquayLivingSofa,
-      newquayKitchen,
-      newquayBedroomMaster,
-      newquayBathroom
+      retroLounge,
+      retroPool,
+      retroStudioOverview,
+      retroLiving,
+      retroBedroomWide,
+      retroBathroom,
+      retroBedroom,
+      retroDining,
+      retroKitchen,
+      retroKitchenWide
     ],
     location: "Fistral Beach, Newquay",
     address: "18 Fistral Court, Pentire Avenue Trevisco, Newquay, TR7 1PD, United Kingdom",
