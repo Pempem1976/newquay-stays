@@ -1,17 +1,7 @@
-import { useState } from 'react';
 import AccommodationCard from './AccommodationCard';
-import BookingModal from './BookingModal';
-import { accommodations, Accommodation } from '@/data/accommodations';
+import { accommodations } from '@/data/accommodations';
 
 const AccommodationSection = () => {
-  const [selectedAccommodation, setSelectedAccommodation] = useState<Accommodation | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleBook = (accommodation: Accommodation) => {
-    setSelectedAccommodation(accommodation);
-    setIsModalOpen(true);
-  };
-
   return (
     <section id="accommodations" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -35,20 +25,11 @@ const AccommodationSection = () => {
               className="animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <AccommodationCard 
-                accommodation={accommodation}
-                onBook={handleBook}
-              />
+              <AccommodationCard accommodation={accommodation} />
             </div>
           ))}
         </div>
       </div>
-
-      <BookingModal 
-        accommodation={selectedAccommodation}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </section>
   );
 };

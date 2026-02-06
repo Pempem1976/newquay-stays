@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Star, MapPin, Users, Bed, Bath, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accommodation } from '@/data/accommodations';
 
 interface AccommodationCardProps {
   accommodation: Accommodation;
-  onBook: (accommodation: Accommodation) => void;
 }
 
-const AccommodationCard = ({ accommodation, onBook }: AccommodationCardProps) => {
+const AccommodationCard = ({ accommodation }: AccommodationCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = (e: React.MouseEvent) => {
@@ -123,7 +121,7 @@ const AccommodationCard = ({ accommodation, onBook }: AccommodationCardProps) =>
           </div>
         </div>
         
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {accommodation.amenities.slice(0, 4).map((amenity) => (
             <Badge 
               key={amenity} 
@@ -142,13 +140,6 @@ const AccommodationCard = ({ accommodation, onBook }: AccommodationCardProps) =>
             </Badge>
           )}
         </div>
-        
-        <Button 
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
-          onClick={() => onBook(accommodation)}
-        >
-          Book Now
-        </Button>
       </CardContent>
     </Card>
   );
