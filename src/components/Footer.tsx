@@ -17,8 +17,11 @@ const Footer = () => {
               Make your holiday unforgettable with us!  Our prices are indicative only. For an accurate quote, please send us your preferred dates and any special requests, and we will prepare a tailored offer just for you. 
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-primary-foreground/60 hover:text-sunset transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="https://www.facebook.com/profile.php?id=61587890995640"
+              target="_blank"
+              rel="noopener noreferrer"
+               className="text-primary-foreground/60 hover:text-sunset transition-colors">
+                 <Facebook className="h-5 w-5" />
               </a>
               <a href="#" className="text-primary-foreground/60 hover:text-sunset transition-colors">
                 <Instagram className="h-5 w-5" />
