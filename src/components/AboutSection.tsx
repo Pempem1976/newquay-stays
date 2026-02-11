@@ -1,25 +1,25 @@
-import { Waves, Sun, UtensilsCrossed, Camera } from 'lucide-react';
+import { Waves, BabyIcon, UtensilsCrossed, Camera , HeartIcon } from 'lucide-react';
 
 const features = [
   {
     icon: Waves,
     title: 'World-Class Surfing',
-    description: 'Fistral Beach is the UK\'s surfing capital, with perfect waves for beginners and pros alike.'
+    description: 'If you’re here to surf, you’re in the right place. Newquay is often called the surf capital of the UK, with world-famous beaches like Fistral Beach, Towan Beach, and Lusty Glaze. Whether you’re a beginner or an experienced surfer, there are waves, surf schools, and board hire all close by.'
   },
   {
-    icon: Sun,
-    title: 'Beautiful Beaches',
-    description: '7 stunning beaches await with golden sand and crystal-clear waters in the heart of Cornwall.'
+    icon: BabyIcon,
+    title: 'Perfect for Families',
+    description: 'Newquay is a wonderful destination for families. Safe sandy beaches, rock pools, and gentle coastal walks make it easy to enjoy time together. Newquay Zoo and the Blue Reef Aquarium are both nearby and always a hit with children, while plenty of cafés and restaurants welcome families with open arms.'
+  },
+  {
+    icon: HeartIcon,
+    title: 'Ideal for Couples ',
+    description: 'For couples, Newquay offers romance in its simplest form – long beach walks, stunning sunsets, and cosy seaside dinners. Enjoy a sunset drink overlooking the ocean, explore quiet coves along the South West Coast Path, or take a short trip to nearby villages for a slower pace and beautiful scenery.'
   },
   {
     icon: UtensilsCrossed,
-    title: 'Local Cuisine',
-    description: 'Fresh seafood, local craft beers and award-winning restaurants on every corner.'
-  },
-  {
-    icon: Camera,
-    title: 'Unforgettable Experiences',
-    description: 'Whale watching, coastal walks, and the most beautiful sunsets await you in Cornwall.'
+    title: 'Food, Culture & Local Life',
+    description: 'Cornwall is known for its food, and Newquay delivers. Don’t leave without trying a traditional Cornish pasty, fresh local seafood, or a cream tea. The town has a lively cultural scene too, with music events, beach festivals and the well-known Boardmasters Festival, bringing together surf, music and summer vibes.'
   }
 ];
 

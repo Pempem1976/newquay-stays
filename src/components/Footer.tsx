@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               Premium accommodations in Newquay's most beautiful locations. 
-              Make your holiday unforgettable with us!
+              Make your holiday unforgettable with us!  Our prices are indicative only. For an accurate quote, please send us your preferred dates and any special requests, and we will prepare a tailored offer just for you. 
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-primary-foreground/60 hover:text-sunset transition-colors">
@@ -30,11 +30,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-display font-semibold text-lg mb-4">More information </h4>
             <ul className="space-y-3">
               <li>
                 <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Our Accommodations
+                  For more information about our accommodations, please get in touch with us — we’ll be happy to assist you.
                 </a>
               </li>
               <li>
@@ -44,13 +44,13 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  FAQ
+                  
                 </a>
               </li>
               <li>
                 <a href="#" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Terms & Conditions
-                </a>
+                  
+                </a> 
               </li>
             </ul>
           </div>
@@ -60,22 +60,27 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Seaside Cottage
+                  Fistral Beach View with pool
                 </a>
               </li>
               <li>
                 <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Panorama Apartment
+                  Newquay Rocklands Beach View
                 </a>
               </li>
               <li>
                 <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Surfer's Lodge
+                  Retro Ocean View Pad by Fistral Beach
                 </a>
               </li>
               <li>
                 <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
-                  Victorian B&B
+                  Sea View Studio by Fistral Beach
+                </a>
+              </li>
+                            <li>
+                <a href="#accommodations" className="text-primary-foreground/80 hover:text-sunset transition-colors text-sm">
+                  Blue Tides Hideaway by Fistral
                 </a>
               </li>
             </ul>
