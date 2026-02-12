@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/newquay-stays/",   // ← GitHub Pages-hez
+  base: "/newquay-stays/",  // ← GitHub Pages-hez
   server: {
     host: "::",
     port: 8080,
