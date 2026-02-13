@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/newquay-stays/",
+  base: "/",  // ← EZ VÁLTOZOTT!
   server: {
     host: "::",
     port: 8080,
