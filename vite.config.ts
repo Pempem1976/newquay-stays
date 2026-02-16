@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   // ← Cseréld le "REPO_NAME"-t a GitHub repo nevedre
-  base: "/REPO_NAME/",
+  base: "/newquay-stays/",
 
   server: {
     host: "::",
@@ -31,3 +31,4 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
   },
 }));
+
