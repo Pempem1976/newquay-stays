@@ -4,9 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Mivel a Pages a /docs mappát szolgálja ki gyökérként,
-  // a base legyen relatív, így az assetek helyesen töltődnek be
-  base: "./",
+  base: "./", // relatív base, mert a docs mappa már gyökérként szolgál
 
   server: {
     host: "::",
@@ -26,7 +24,8 @@ export default defineConfig(({ mode }) => ({
   },
 
   build: {
-    // Az assetek a dist/assets/ mappába kerülnek
-    assetsDir: "assets",
+    assetsDir: "assets", // a JS/CSS/image assetek ide kerülnek
   },
 }));
+
+
