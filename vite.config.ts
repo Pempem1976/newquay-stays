@@ -4,9 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Base a GitHub repo nevére mutat (pl. newquay-stays)
-  // Ez biztosítja, hogy az assetek helyesen töltődjenek be
-  base: "/newquay-stays/",
+  // Mivel a Pages a /docs mappát szolgálja ki gyökérként,
+  // a base legyen relatív, így az assetek helyesen töltődnek be
+  base: "./",
 
   server: {
     host: "::",
@@ -30,4 +30,3 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
   },
 }));
-
