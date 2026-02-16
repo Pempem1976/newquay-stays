@@ -1,12 +1,11 @@
-Rendben, itt van egy GitHub Pages-re optimalizált vite.config.ts React projekthez, ami az AVIF és egyéb asseteket is megfelelően kezeli:
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // ← Cseréld le "REPO_NAME"-t a GitHub repo nevedre
+  // Base a GitHub repo nevére mutat (pl. newquay-stays)
+  // Ez biztosítja, hogy az assetek helyesen töltődjenek be
   base: "/newquay-stays/",
 
   server: {
@@ -27,7 +26,7 @@ export default defineConfig(({ mode }) => ({
   },
 
   build: {
-    // assetek kimeneti mappája
+    // Az assetek a dist/assets/ mappába kerülnek
     assetsDir: "assets",
   },
 }));
